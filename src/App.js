@@ -3,6 +3,7 @@ import styles from "./style.module.css";
 import Meals from "./component/meals/meals";
 import { useState } from "react";
 import CartContext from "./store/cart-context";
+import FilterMeals from "./component/filter/filtermeals";
 
 const MEAL_DATA = [
   {
@@ -93,9 +94,19 @@ const App = () => {
 
     setCartData(newCart);
   };
+  const filterHandler = (keyword) => {
+    const newData = MEAL_DATA.filter(
+      (item) => item.title.indexOf(keyword) !== -1
+    );
+    setMealsData(newData);
+  };
   return (
     <CartContext.Provider value={{ ...cartData, addItem, removeItem }}>
       <div>
+        <FilterMeals
+          onFilter={filterHandler}
+          style={{ width: "750rem", height: 200 }}
+        />
         <Meals meals={mealsData} style={{ width: "750rem", height: 200 }} />
       </div>
     </CartContext.Provider>
