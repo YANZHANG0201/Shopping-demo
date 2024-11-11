@@ -1,0 +1,11 @@
+.Mealsbox {
+  position: absolute;
+  /* background-color: red; */
+  width: 100vw; /* 使父元素占满视口宽度 */
+  /* top: 0;
+  bottom: 0; */
+  height: 100vh; /* 设置固定高度为视口高度 */
+  top: 0;
+  left: 0;
+  overflow: auto;
+}

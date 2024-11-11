@@ -1,10 +1,17 @@
 import React from "react";
 import Meal from "./meal/meal";
-
-const Meals = () => {
+import MealsCss from "./meals.module.css";
+const Meals = (props) => {
   return (
-    <div>
-      <Meal />
+    <div className={MealsCss.Mealsbox}>
+      {props.meals.map((item) => (
+        <Meal
+          key={item.id}
+          meal={item}
+          onAdd={props.addHandle}
+          onSub={props.subHandle}
+        />
+      ))}
     </div>
   );
 };

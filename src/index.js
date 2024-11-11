@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App.js";
 import reportWebVitals from "./reportWebVitals";
 //移动端
-// document.documentElement.style.fontSize = 100 / 750 + "vw";
+document.documentElement.style.fontSize = (window.innerWidth / 750) * 12 + "px";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
