@@ -4,6 +4,7 @@ import Meals from "./component/meals/meals";
 import { useState } from "react";
 import CartContext from "./store/cart-context";
 import FilterMeals from "./component/filter/filtermeals";
+import Cart from "./component/cart/cart";
 
 const MEAL_DATA = [
   {
@@ -43,6 +44,20 @@ const MEAL_DATA = [
   },
   {
     id: "6",
+    title: "星星",
+    desc: "百分百可爱hha",
+    price: 120,
+    img: "./img/meals/2.jpg",
+  },
+  {
+    id: "7",
+    title: "星星",
+    desc: "百分百可爱hha",
+    price: 120,
+    img: "./img/meals/2.jpg",
+  },
+  {
+    id: "8",
     title: "星星",
     desc: "百分百可爱hha",
     price: 120,
@@ -108,6 +123,7 @@ const App = () => {
           style={{ width: "750rem", height: 200 }}
         />
         <Meals meals={mealsData} style={{ width: "750rem", height: 200 }} />
+        <Cart />
       </div>
     </CartContext.Provider>
   );

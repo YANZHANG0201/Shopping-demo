@@ -1,0 +1,14 @@
+.Cart {
+  display: flex;
+  position: fixed;
+  background-color: aquamarine;
+  width: 60rem;
+  bottom: 20px;
+}
+.price {
+  width: 50%;
+  font-size: 12px;
+}
+.amount {
+  font-size: 12px;
+}
