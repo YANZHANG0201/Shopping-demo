@@ -5,12 +5,7 @@ const Meals = (props) => {
   return (
     <div className={MealsCss.Mealsbox}>
       {props.meals.map((item) => (
-        <Meal
-          key={item.id}
-          meal={item}
-          onAdd={props.addHandle}
-          onSub={props.subHandle}
-        />
+        <Meal key={item.id} meal={item} />
       ))}
     </div>
   );

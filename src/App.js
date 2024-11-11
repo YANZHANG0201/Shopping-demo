@@ -2,6 +2,7 @@ import "./App.css";
 import styles from "./style.module.css";
 import Meals from "./component/meals/meals";
 import { useState } from "react";
+import CartContext from "./store/cart-context";
 
 const MEAL_DATA = [
   {
@@ -56,7 +57,7 @@ const App = () => {
     totalAmount: 0,
     totalPrice: 0,
   });
-  const addMealHandler = (meal) => {
+  const addItem = (meal) => {
     //对购物车复制
     const newCart = { ...cartData };
     //商品进入购物车
@@ -73,7 +74,7 @@ const App = () => {
 
     setCartData(newCart);
   };
-  const subMealHandler = (meal) => {
+  const removeItem = (meal) => {
     //对购物车复制
     const newCart = { ...cartData };
     //商品进入购物车
@@ -93,14 +94,11 @@ const App = () => {
     setCartData(newCart);
   };
   return (
-    <div>
-      <Meals
-        meals={mealsData}
-        addHandle={addMealHandler}
-        subHandle={subMealHandler}
-        style={{ width: "750rem", height: 200 }}
-      />
-    </div>
+    <CartContext.Provider value={{ ...cartData, addItem, removeItem }}>
+      <div>
+        <Meals meals={mealsData} style={{ width: "750rem", height: 200 }} />
+      </div>
+    </CartContext.Provider>
   );
 };
 

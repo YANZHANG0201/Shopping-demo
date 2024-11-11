@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./counter.module.css";
+import CartContext from "../../../../../store/cart-context";
 
 //计数器--外部meal组件穿的
 const Counter = (props) => {
+  const cartctx = useContext(CartContext);
   const addButton = () => {
-    props.onAdd(props.meal);
+    cartctx.addItem(props.meal);
   };
   const subButton = () => {
-    props.onSub(props.meal);
+    cartctx.removeItem(props.meal);
   };
   return (
     <div>
